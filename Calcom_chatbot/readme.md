@@ -50,9 +50,10 @@ cd <repository_name>
 pip install -r requirements.txt
 ```
 
-3.Set up environment variables for Cal.com API credentials by creating a .env file in the root directory:
+3.Set up environment variables for Cal.com API and Google Cloud credentials by creating a .env file in the root directory:
 ```bash
 CALCOM_API_KEY=<your_api_key>
+GOOGLE_CLOUD_API_KEY=<your_google_cloud_api_key>
 ```
 
 ## Run the Streamlit app:
