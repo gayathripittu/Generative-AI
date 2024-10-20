@@ -33,8 +33,8 @@ Before running the project, ensure you have the following installed:
 2. **Streamlit**: Install Streamlit via pip:
    ```bash
    pip install streamlit
-3. Cal.com API Key: You need a Cal.com account and API credentials. Set up your Cal.com API by signing up at Cal.com, and retrieve your API key from the developer dashboard.
-4. Docker: If you plan to use Docker for deployment or running locally, install it from Docker's official site.
+3. Cal.com API Key: You need a Cal.com(https://cal.com/) account and API credentials. Set up your Cal.com API by signing up at Cal.com, and retrieve your API key from the developer dashboard.
+4. Docker: If you plan to use Docker for deployment or running locally, install it from Docker's official site(https://docs.docker.com/engine/install/).
 
 ## Running the Project
 Once you have the prerequisites set up:
@@ -43,6 +43,7 @@ Once you have the prerequisites set up:
 ```bash
 git clone <repository_url>
 cd <repository_name>
+```
 
 2. Install the required dependencies:
 ```bash
