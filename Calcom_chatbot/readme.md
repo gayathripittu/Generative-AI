@@ -33,8 +33,8 @@ Before running the project, ensure you have the following installed:
 2. **Streamlit**: Install Streamlit via pip:
    ```bash
    pip install streamlit
-3. Cal.com API Key: You need a Cal.com(https://cal.com/) account and API credentials. Set up your Cal.com API by signing up at Cal.com, and retrieve your API key from the developer dashboard.
-4. Docker: If you plan to use Docker for deployment or running locally, install it from Docker's official site(https://docs.docker.com/engine/install/).
+3. Cal.com API Key: You need a [Cal.com](https://cal.com/) account and API credentials. Set up your Cal.com API by signing up at Cal.com, and retrieve your API key from the developer dashboard.
+4. Docker: If you plan to use Docker for deployment or running locally, install it from [Docker's official site](https://docs.docker.com/engine/install/).
 
 ## Running the Project
 Once you have the prerequisites set up:
@@ -48,18 +48,21 @@ cd <repository_name>
 2. Install the required dependencies:
 ```bash
 pip install -r requirements.txt
+```
 
 3.Set up environment variables for Cal.com API credentials by creating a .env file in the root directory:
 ```bash
 CALCOM_API_KEY=<your_api_key>
+```
 
 ## Run the Streamlit app:
 ```bash
 streamlit run calc_main.py
 Open your browser and navigate to http://localhost:8501 to interact with the chatbot.
+```
 
 ## Deployment
 The application has been containerized using Docker and deployed on Google Cloud for scalable access.
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
