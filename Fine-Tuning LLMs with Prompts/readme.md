@@ -47,6 +47,7 @@ pip install -r requirements.txt
 ```
 
 **4. Running the Project**
+
 Launch Jupyter Notebook:
 ```bash
 jupyter notebook
