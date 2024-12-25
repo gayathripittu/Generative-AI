@@ -39,4 +39,77 @@ Make sure you have the following installed:
 ### 1. Clone the Repository  
 ```bash  
 git clone <repository-url>  
-cd <repository-folder>  
+cd <repository-folder>
+```
+
+### 2. Install Dependencies
+Create a virtual environment and install the required packages:
+
+```bash  
+python -m venv venv  
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`  
+pip install -r requirements.txt
+```
+
+### 3. Train and Save the ML Model
+- Train your ML model and save it as a `.pkl` file.
+- If you're using a scaler for normalization, save it as a `.pkl` file as well.
+
+### 4. Start Flask Webhook
+- Create a Flask app with a /predict route that processes requests from Dialogflow.
+- Run the Flask app:
+  
+```bash 
+python app.py  
+```
+Use Ngrok to expose the Flask server with a public URL.
+
+### 5. Expose Localhost Using Ngrok
+Run the following command to get a public URL for your webhook:
+
+```bash 
+ngrok http portnumber   
+```
+
+Use the generated public URL (e.g.,` https://your-ngrok-url.ngrok-free.app/predict`) in Dialogflow webhook settings for testing purposes.
+
+### 6.Create and Integrate Dialogflow Chatbot
+
+##### 1. Create a Dialogflow Agent:
+  - Go to the Dialogflow Console.
+  - Create a new agent.
+  - Define intents (e.g., Start Intent, Collect Parameters, Submit Intent) to handle 
+    conversations.
+  - Set up entities for custom parameters (e.g., @sys.number for numerical inputs).
+  - Enable webhook calls in the Fulfillment section and add the Ngrok URL as the webhook 
+    endpoint.
+
+##### 2.Configure Webhook:
+Create a 'Dockerfile' and build the image:
+  - Enable webhook calls in the Fulfillment section.
+  - Add the public URL (e.g., from Ngrok or GCP) as the webhook endpoint.
+
+##### 3.Integrate the Flask Webhook:
+Create a 'Dockerfile' and build the image:
+  - Ensure the Flask app processes the incoming JSON request and sends a proper response.
+
+
+#### Commands
+
+- **Build Docker Image:**
+```bash 
+docker build -t loan-prediction-chatbot .     
+```
+- **Run the Docker Container Locally**
+```bash 
+docker run -p 8080:8080 loan-prediction-chatbot     
+```
+
+- **Deploy to GCP:**
+```bash 
+gcloud run deploy loan-prediction-chatbot --image gcr.io/<your_project_id>/loan-prediction-chatbot --platform managed --region <your_region> --allow-unauthenticated
+```
+
+## Testing
+- Test your agent in the Dialogflow console.
+- Ensure that your webhook is called correctly and the responses are accurate.
