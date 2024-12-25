@@ -71,7 +71,8 @@ Run the following command to get a public URL for your webhook:
 ngrok http portnumber   
 ```
 
-Use the generated public URL (e.g.,` https://your-ngrok-url.ngrok-free.app/predict`) in Dialogflow webhook settings for testing purposes.
+Use the generated public URL (e.g.,` https://your-ngrok-url.ngrok-free.app/predict`) in Dialogflow webhook settings.
+Test locally using ngrok before deploying to GCP or any cloud provider.
 
 ### 6.Create and Integrate Dialogflow Chatbot
 
@@ -113,3 +114,27 @@ gcloud run deploy loan-prediction-chatbot --image gcr.io/<your_project_id>/loan-
 ## Testing
 - Test your agent in the Dialogflow console.
 - Ensure that your webhook is called correctly and the responses are accurate.
+
+## Usage
+#### Interaction Flow
+1. Start the chatbot:
+  - User: "I want to check loan eligibility."
+  - Chatbot: "I will need some details to predict loan eligibility. Let's begin!"
+2. Provide required details as prompted by the bot.
+3. Receive loan eligibility prediction.
+
+##### Example
+
+```bash
+Chatbot: 🤖 What is your annual income?
+User: 700000
+Chatbot: 🤖 How much loan amount are you applying for?
+User: 700000
+Chatbot: 🤖 What is the loan term in months?
+User: 45
+Chatbot: 🤖 What is your CIBIL score?
+User: 760
+Chatbot: 🤖 Are you self-employed? (Yes or No)?
+User: No
+Chatbot: 🤖 🎉 Congratulations! Your loan application has been pre-approved! 🎉
+```
